@@ -12,7 +12,7 @@ yarn-error.log*
 .env.development.local
 .env.local.php
 .env.test.local
-.evn.example
+.env.example
 # Trust me nothing to change
 # Python
 __pycache__/
