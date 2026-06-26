@@ -24,14 +24,14 @@ export async function fetchAdzunaJobs(limit: number = 20): Promise<RawJob[]> {
   }
 
   try {
-    // Search endpoint for Pakistan (pk)
-    const url = `https://api.adzuna.com/v1/api/jobs/pk/search/1`;
+    // Search endpoint for US (focusing on Remote roles since PK is unsupported by Adzuna)
+    const url = `https://api.adzuna.com/v1/api/jobs/us/search/1`;
     const response = await axios.get(url, {
       params: {
         app_id: appId,
         app_key: appKey,
         results_per_page: limit,
-        what: 'developer software engineer programmer IT', // search terms
+        what: 'remote software developer engineer', // query remote roles
         'content-type': 'application/json'
       }
     });
