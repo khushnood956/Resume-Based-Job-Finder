@@ -12,6 +12,7 @@ yarn-error.log*
 .env.development.local
 .env.local.php
 .env.test.local
+.evn.example
 
 # Python
 __pycache__/
