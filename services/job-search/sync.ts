@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 import * as dotenv from 'dotenv';
 import { fetchAdzunaJobs } from './clients/adzuna';
+import { fetchIndeedApifyJobs } from './clients/indeed-apify';
 import { tagJobSkills } from './utils/skill-tagger';
 
 dotenv.config();
@@ -15,12 +16,31 @@ if (!supabaseUrl || !supabaseServiceKey) {
 
 const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
+interface CombinedJob {
+  title: string;
+  company: string;
+  location: string;
+  is_remote: boolean;
+  description: string;
+  url: string;
+  salary: string;
+  posted_at: string;
+  source: string;
+}
+
 async function syncJobs() {
   console.log("Starting job synchronization routine...");
 
-  // 1. Fetch raw jobs
-  const rawJobs = await fetchAdzunaJobs(30);
-  console.log(`Fetched ${rawJobs.length} job listings.`);
+  // 1. Fetch raw jobs from Adzuna and Indeed (via Apify)
+  const adzunaJobs = await fetchAdzunaJobs(30);
+  const indeedJobs = await fetchIndeedApifyJobs(30);
+  
+  const rawJobs: CombinedJob[] = [
+    ...adzunaJobs.map(j => ({ ...j, source: 'adzuna_pk' })),
+    ...indeedJobs.map(j => ({ ...j, source: 'indeed_apify' }))
+  ];
+  
+  console.log(`Fetched ${adzunaJobs.length} Adzuna jobs and ${indeedJobs.length} Indeed jobs. Combined: ${rawJobs.length}`);
 
   let insertedCount = 0;
   let skippedCount = 0;
@@ -50,7 +70,7 @@ async function syncJobs() {
           is_remote: rawJob.is_remote,
           description: rawJob.description,
           url: rawJob.url,
-          source: 'adzuna_pk',
+          source: rawJob.source || 'adzuna_pk',
           salary: rawJob.salary,
           posted_at: rawJob.posted_at
         })
