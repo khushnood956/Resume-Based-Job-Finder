@@ -1,0 +1,115 @@
+========================================================================
+    RESUME-TO-OPPORTUNITIES ENGINE - FULL SETUP & INTEGRATION TUTORIAL
+========================================================================
+
+This guide walks you through setting up the database, configuring credentials,
+booting the services, and integrating the Telegram Bot and Adzuna APIs.
+
+------------------------------------------------------------------------
+PART 1: HOW TO OBTAIN AND CONFIGURE API CREDENTIALS
+------------------------------------------------------------------------
+
+1. ADZUNA API (Job Aggregator Feed)
+   * The platform uses the Adzuna API to fetch real developer job openings.
+   * How to get keys:
+     1. Visit the Adzuna Developer Portal: https://developer.adzuna.com
+     2. Register for a free Developer Account.
+     3. Go to your Dashboard and look for your App ID and App Key.
+     4. Set these in your environment variables:
+        ADZUNA_APP_ID=your_adzuna_app_id
+        ADZUNA_APP_KEY=your_adzuna_app_key
+   * NOTE: If you do not set these keys, the system automatically falls back
+     to Mock Sandbox Mode and generates realistic jobs in Karachi, Lahore,
+     Islamabad, and Remote to let you test the system immediately.
+
+2. CRON_SECRET_KEY (GitHub Workflow Protection)
+   * This is a custom secret token used to protect the API cron route from unauthorized access.
+   * How to set it:
+     1. Generate a random secure alphanumeric string (e.g. "my_secret_cron_token_2026_xyz" or a random UUID).
+     2. Assign it to:
+        CRON_SECRET_KEY=your_randomly_generated_string
+     3. Make sure the value matches in both the `frontend/.env.local` and your GitHub Secrets (or scraper env settings). When the scraper runs, it includes this key in the header:
+        Authorization: Bearer <CRON_SECRET_KEY>
+
+3. TELEGRAM_BOT_TOKEN & SETUP
+   * This links candidate profiles to Telegram to push matching jobs directly.
+   * How to create the bot:
+     1. Open Telegram and search for `@BotFather` (the official bot creator).
+     2. Send the message: `/newbot`
+     3. Follow the prompts: choose a display name (e.g., "Pak Job Matcher") and a unique username ending in "bot" (e.g., "PakJobMatchBot").
+     4. BotFather will reply with your API Token (looks like: `123456789:ABCdefGhIJKlmNoPQRsTUVwxyZ`).
+     5. Set this as `TELEGRAM_BOT_TOKEN` in your env files.
+
+------------------------------------------------------------------------
+PART 2: HOW THE TELEGRAM BOT LINKING FLOW WORKS
+------------------------------------------------------------------------
+
+To connect a candidate's web profile to their Telegram app, we use a secure token handshake:
+
+1. Verification Token Generation:
+   * When a candidate visits the Settings page, the Next.js frontend retrieves their user UUID (e.g., `00000000-0000-0000-0000-000000000001`).
+   * The UI encodes this UUID into a Base64 string (e.g. `MDAwMDAwMDAtMDAwMC0wMDAw...`). This is the `<verify_token>`.
+
+2. Direct Handshake Trigger:
+   * The Settings page displays a "Link Bot Account" button which redirects the user to:
+     https://t.me/your_bot_username?start=<verify_token>
+   * Clicking this opens Telegram and presents a "Start" button at the bottom of the chat.
+
+3. Bot Processing:
+   * When the user clicks "Start", Telegram sends the message `/start <verify_token>` to the bot listener.
+   * The bot polling service (`services/notifications/telegram-bot.ts`) receives this update.
+   * It extracts the Base64 token, decodes it back to the candidate's database user UUID, and:
+     a) Asserts the candidate profile exists in Supabase.
+     b) Updates the candidate's `profiles.telegram_chat_id` with the Telegram Chat ID.
+     c) Sets `profiles.notification_telegram_active` to `true`.
+     d) Replies: "Assalam-o-Alaikum! Your account has been linked successfully."
+
+------------------------------------------------------------------------
+PART 3: STEP-BY-STEP SYSTEM DEPLOYMENT
+------------------------------------------------------------------------
+
+STEP A: Supabase Relational Database Setup
+1. Log in to your Supabase Console: https://supabase.com
+2. Go to **SQL Editor** -> **New Query**.
+3. Copy-paste all code from `database/schema.sql` and click **Run**.
+4. To test table setups and trigger profiles, copy-paste and run the queries inside `database/TESTING_DDL.md`.
+
+STEP B: Initialize local Environment variables
+1. In `frontend/`, create `.env.local` and paste Next.js variables (copy from `.env.example`).
+2. In `services/resume-parser/`, create `.env` and paste FastAPI token.
+3. In `services/job-search/` and `services/notifications/`, create `.env` files and paste keys.
+
+STEP C: Start Python Parser Service
+1. Open a terminal:
+   ```bash
+   cd services/resume-parser
+   .\venv\Scripts\activate
+   uvicorn main:app --host 127.0.0.1 --port 8000
+   ```
+2. The parser is now running on `http://127.0.0.1:8000`.
+
+STEP D: Start Next.js Frontend Portal
+1. Open a new terminal:
+   ```bash
+   cd frontend
+   npm run dev
+   ```
+2. Open `http://localhost:3000` in your web browser.
+
+STEP E: Launch background Services (Scrapers & Bot)
+1. To fetch, tag, and synchronize job posts from Adzuna:
+   ```bash
+   cd services/job-search
+   npm run start
+   ```
+2. To boot the Telegram Bot listener (keeps polling chat links):
+   ```bash
+   cd services/notifications
+   node dist/telegram-bot.js
+   ```
+3. To trigger the notification alert loop (emails top matches to candidates):
+   ```bash
+   cd services/notifications
+   npm run start
+   ```
+========================================================================
