@@ -13,7 +13,7 @@ yarn-error.log*
 .env.local.php
 .env.test.local
 .evn.example
-
+# Trust me nothing to change
 # Python
 __pycache__/
 *.pyc
