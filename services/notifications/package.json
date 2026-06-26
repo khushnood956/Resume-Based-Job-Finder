@@ -1,0 +1,19 @@
+{
+  "name": "notifications",
+  "version": "1.0.0",
+  "description": "Daily notifications engine for Email digests and Telegram matching alerts",
+  "main": "dist/dispatcher.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node dist/dispatcher.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.43.4",
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "typescript": "^5.4.5"
+  }
+}
