@@ -1,0 +1,19 @@
+{
+  "name": "job-search",
+  "version": "1.0.0",
+  "description": "Daily job aggregator and scraper engine targeting Pakistan",
+  "main": "dist/sync.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node dist/sync.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.43.4",
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "typescript": "^5.4.5"
+  }
+}
