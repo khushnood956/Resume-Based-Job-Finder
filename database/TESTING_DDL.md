@@ -64,8 +64,8 @@ This test checks if creating a user in Supabase Auth automatically creates a pro
    ```
 2. **Check if the trigger fired**:
    ```sql
-   SELECT * FROM public.profiles 
-   WHERE id = '00000000-0000-0000-0000-000000000001'::uuid;
+      SELECT * FROM public.profiles 
+      WHERE id = '00000000-0000-0000-0000-000000000001'::uuid;
    ```
 * **Expected Output**: A row with email `test_user@jobfinder.pk` and full_name `"Test Candidate"` should have been automatically created in `public.profiles`.
 
@@ -77,7 +77,8 @@ This test checks if creating a user in Supabase Auth automatically creates a pro
    INSERT INTO public.skills (id, name, category) VALUES
    ('11111111-1111-1111-1111-111111111111'::uuid, 'React', 'frameworks'),
    ('22222222-2222-2222-2222-222222222222'::uuid, 'Python', 'programming_languages'),
-   ('33333333-3333-3333-3333-333333333333'::uuid, 'Docker', 'devops_cloud');
+   ('33333333-3333-3333-3333-333333333333'::uuid, 'Docker', 'devops_cloud')
+   ON CONFLICT (id) DO NOTHING;
    ```
 2. **Link candidate profile to React and Python (candidate is missing Docker)**:
    ```sql
@@ -89,7 +90,8 @@ This test checks if creating a user in Supabase Auth automatically creates a pro
    -- Map skills
    INSERT INTO public.user_skills (user_id, skill_id) VALUES
    ('00000000-0000-0000-0000-000000000001'::uuid, '11111111-1111-1111-1111-111111111111'::uuid), -- React
-   ('00000000-0000-0000-0000-000000000001'::uuid, '22222222-2222-2222-2222-222222222222'::uuid); -- Python
+   ('00000000-0000-0000-0000-000000000001'::uuid, '22222222-2222-2222-2222-222222222222'::uuid) -- Python
+   ON CONFLICT (user_id, skill_id) DO NOTHING;
    ```
 
 ---
@@ -109,13 +111,15 @@ This tests if the stored PLpgSQL function correctly scores opportunities based o
      'https://example.com/job-1',
      'test_script',
      NOW() -- posted today (recency bonus)
-   );
+   )
+   ON CONFLICT (id) DO NOTHING;
 
    -- Link required skills
    INSERT INTO public.job_skills (job_id, skill_id) VALUES
    ('99999999-9999-9999-9999-999999999999'::uuid, '11111111-1111-1111-1111-111111111111'::uuid), -- React
    ('99999999-9999-9999-9999-999999999999'::uuid, '22222222-2222-2222-2222-222222222222'::uuid), -- Python
-   ('99999999-9999-9999-9999-999999999999'::uuid, '33333333-3333-3333-3333-333333333333'::uuid); -- Docker (Missing)
+   ('99999999-9999-9999-9999-999999999999'::uuid, '33333333-3333-3333-3333-333333333333'::uuid) -- Docker (Missing)
+   ON CONFLICT (job_id, skill_id) DO NOTHING;
    ```
 
 2. **Execute Matching RPC function**:
