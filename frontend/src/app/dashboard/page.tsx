@@ -444,6 +444,160 @@ function getMockData() {
       salary: "Rs. 90,000 - 140,000",
       url: "https://arbisoft.com/careers/uiux-designer",
       posted_at: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString()
+    },
+    {
+      id: "mock-7",
+      title: "Next.js Full Stack Engineer",
+      company: "Contour Software",
+      location: "Islamabad",
+      is_remote: false,
+      description: "Hiring a Full Stack Developer. Stacks: React, Next.js, Node.js, TypeScript, and MongoDB. Must have Git and CI/CD workflow experience.",
+      salary: "Rs. 130,000 - 200,000",
+      url: "https://contour.com.pk/careers/nextjs-dev",
+      posted_at: new Date(Date.now() - 6 * 24 * 60 * 60 * 1000).toISOString()
+    },
+    {
+      id: "mock-8",
+      title: "Node.js API Specialist",
+      company: "VentureDive",
+      location: "Karachi",
+      is_remote: false,
+      description: "Backend Specialist focused on Node.js, Express, MongoDB, and Redis. Docker containers knowledge is preferred.",
+      salary: "Rs. 110,000 - 170,000",
+      url: "https://venturedive.com/careers/nodejs-backend",
+      posted_at: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString()
+    },
+    {
+      id: "mock-9",
+      title: "PHP CodeIgniter Web Developer",
+      company: "Strategic Systems",
+      location: "Faisalabad",
+      is_remote: false,
+      description: "PHP Web Developer. Experience in CodeIgniter or Yii framework, MySQL databases, jQuery, HTML, and CSS layouts is mandatory.",
+      salary: "Rs. 70,000 - 100,000",
+      url: "https://stratsystems.com/careers/php-ci",
+      posted_at: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000).toISOString()
+    },
+    {
+      id: "mock-10",
+      title: "React Native Mobile Engineer",
+      company: "Rolustech",
+      location: "Remote",
+      is_remote: true,
+      description: "Looking for a Mobile Developer with experience in React Native, Redux, iOS/Android compilation, and TypeScript.",
+      salary: "Rs. 120,000 - 170,000",
+      url: "https://rolustech.com/careers/react-native-remote",
+      posted_at: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString()
+    },
+    {
+      id: "mock-11",
+      title: "Associate DevOps Cloud Developer",
+      company: "Symmetry Group",
+      location: "Karachi",
+      is_remote: false,
+      description: "Join as a DevOps Associate. Key technologies: AWS Cloud services, Docker containers, Linux shells scripting, Git, and Jenkins pipelines.",
+      salary: "Rs. 95,000 - 140,000",
+      url: "https://symmetry.group/careers/devops-assoc",
+      posted_at: new Date(Date.now() - 12 * 24 * 60 * 60 * 1000).toISOString()
+    },
+    {
+      id: "mock-12",
+      title: "WordPress Designer & Developer",
+      company: "Gaditek",
+      location: "Karachi",
+      is_remote: false,
+      description: "WordPress Webmaster required. Must be proficient in WordPress custom layouts design, Elementor, HTML, CSS, JavaScript, and SEO optimization.",
+      salary: "Rs. 75,000 - 105,000",
+      url: "https://gaditek.com/careers/wordpress-dev",
+      posted_at: new Date(Date.now() - 11 * 24 * 60 * 60 * 1000).toISOString()
+    },
+    {
+      id: "mock-13",
+      title: "Python Data Science Intern",
+      company: "10Pearls",
+      location: "Lahore",
+      is_remote: false,
+      description: "We are offering a Python Data Analyst Internship. Candidates must have basic skills in Python programming, Excel data cleanups, SQL queries, and stats.",
+      salary: "Rs. 30,000 - 45,000",
+      url: "https://10pearls.com/careers/python-ds-intern",
+      posted_at: new Date().toISOString()
+    },
+    {
+      id: "mock-14",
+      title: "Angular Frontend Specialist",
+      company: "TRG Pakistan",
+      location: "Karachi",
+      is_remote: false,
+      description: "Hiring an Angular developer. Must possess strong JavaScript, TypeScript, Angular, CSS grid, and RxJS state management knowledge.",
+      salary: "Rs. 100,000 - 160,000",
+      url: "https://trg.com/careers/angular-frontend",
+      posted_at: new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString()
+    },
+    {
+      id: "mock-15",
+      title: "Vue.js Web Developer",
+      company: "Tintash",
+      location: "Lahore",
+      is_remote: false,
+      description: "Hiring a Vue developer. Key skills: JavaScript, HTML5, Vue.js, Vuex, Tailwind CSS, Git, and REST integration workflows.",
+      salary: "Rs. 85,000 - 120,000",
+      url: "https://tintash.com/careers/vue-web",
+      posted_at: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000).toISOString()
+    },
+    {
+      id: "mock-16",
+      title: "Remote PHP WordPress Dev",
+      company: "Remotebase",
+      location: "Remote",
+      is_remote: true,
+      description: "Remotebase is hiring a Remote WordPress Developer. Required: PHP, WordPress, HTML/CSS, MySQL, and basic SEO marketing tools.",
+      salary: "Rs. 110,000 - 160,000",
+      url: "https://remotebase.com/careers/wp-php",
+      posted_at: new Date(Date.now() - 16 * 24 * 60 * 60 * 1000).toISOString()
+    },
+    {
+      id: "mock-17",
+      title: "Python FastAPI Developer",
+      company: "Arbisoft",
+      location: "Remote",
+      is_remote: true,
+      description: "Looking for Python backend developer. Key stack: Python, FastAPI, PostgreSQL database modeling, Docker containers, and Git workflows.",
+      salary: "Rs. 130,000 - 190,000",
+      url: "https://arbisoft.com/careers/fastapi-py",
+      posted_at: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000).toISOString()
+    },
+    {
+      id: "mock-18",
+      title: "Quality Assurance Engineer",
+      company: "Devsinc",
+      location: "Lahore",
+      is_remote: false,
+      description: "SQA automation engineer. Stacks: Selenium, Java, SQL testing queries, QA reporting, and basic Python test scripting.",
+      salary: "Rs. 80,000 - 120,000",
+      url: "https://devsinc.com/careers/sqa-engineer",
+      posted_at: new Date(Date.now() - 19 * 24 * 60 * 60 * 1000).toISOString()
+    },
+    {
+      id: "mock-19",
+      title: "Digital Marketing Specialist",
+      company: "Creative Chaos",
+      location: "Karachi",
+      is_remote: false,
+      description: "We are hiring for Digital Marketing. Must know SEO rules, Social Media Marketing campaigns, Copywriting, and Google Excel tracking.",
+      salary: "Rs. 65,000 - 95,000",
+      url: "https://creativechaos.co/careers/digital-marketing",
+      posted_at: new Date(Date.now() - 20 * 24 * 60 * 60 * 1000).toISOString()
+    },
+    {
+      id: "mock-20",
+      title: "Java Spring Boot Engineer",
+      company: "NetSol Technologies",
+      location: "Lahore",
+      is_remote: false,
+      description: "Senior Java Developer. Stacks: Java, Spring Boot microservices, MySQL databases, Docker orchestration, and Kubernetes clusters.",
+      salary: "Rs. 140,000 - 220,000",
+      url: "https://netsoltech.com/careers/java-spring",
+      posted_at: new Date(Date.now() - 21 * 24 * 60 * 60 * 1000).toISOString()
     }
   ];
 }
