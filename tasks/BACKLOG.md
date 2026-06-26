@@ -17,9 +17,9 @@ A comprehensive breakdown of all granular development tasks required to build th
 * [x] **TS-2.2**: Write test suite with mock files for parser validations.
 * [x] **TS-2.3**: Write PDF reader script using `PyMuPDF` to convert binary uploads to string text.
 * [x] **TS-2.4**: Implement text normalizer (lowercase, space-collapsing, symbol protections).
-* [ ] **TS-2.5**: Construct local dictionary structure for technical/soft skills matching Pakistani demands.
-* [ ] **TS-2.6**: Write extraction regex algorithms to isolate skills without false-matching subwords.
-* [ ] **TS-2.7**: Segment resume sections (Experience, Education, Skills) to optimize parsing weights.
+* [x] **TS-2.5**: Construct local dictionary structure for technical/soft skills matching Pakistani demands.
+* [x] **TS-2.6**: Write extraction regex algorithms to isolate skills without false-matching subwords.
+* [x] **TS-2.7**: Segment resume sections (Experience, Education, Skills) to optimize parsing weights.
 * [ ] **TS-2.8**: Secure parser API using headers-based static API token authentication.
 * [ ] **TS-2.9**: Create Vercel endpoint proxy `/api/resume/upload` to receive frontend uploads and forward them to the parser.
 

@@ -55,9 +55,9 @@
 * **Difficulty**: Hard
 * **Estimated Time**: 8 hours
 * **Acceptance Criteria**:
-  - [ ] Matches multi-word skills ("react native") before single-word matches.
-  - [ ] Avoids partial substring matches (e.g., does not match "java" when scanning "javascript").
-  - [ ] Correctly isolates developer symbol skills like "C++", "C#", and ".NET".
+  - [x] Matches multi-word skills ("react native") before single-word matches.
+  - [x] Avoids partial substring matches (e.g., does not match "java" when scanning "javascript").
+  - [x] Correctly isolates developer symbol skills like "C++", "C#", and ".NET".
 * **Deliverables**: `services/resume-parser/dictionary.json`, `services/resume-parser/parser.py`.
 
 ### TS-1.5: Supabase Setup & DDL Scripts

@@ -1,0 +1,23 @@
+{
+  "programming_languages": [
+    "javascript", "python", "php", "java", "c++", "c#", "typescript", "ruby", "go", "rust", "kotlin", "swift", "sql", "html", "css"
+  ],
+  "frameworks": [
+    "react", "next.js", "nextjs", "vue", "angular", "node.js", "nodejs", "express", "django", "fastapi", "laravel", "wordpress", "codeigniter", "spring boot", "asp.net", "flask", "jquery"
+  ],
+  "databases": [
+    "mysql", "postgresql", "postgres", "mongodb", "sqlite", "redis", "oracle", "firebase", "cassandra"
+  ],
+  "mobile": [
+    "flutter", "react native", "android studio", "ios", "swiftui"
+  ],
+  "devops_cloud": [
+    "aws", "docker", "kubernetes", "git", "github", "gitlab", "ci/cd", "azure", "gcp", "linux", "nginx", "jenkins"
+  ],
+  "design": [
+    "figma", "adobe xd", "photoshop", "illustrator", "ui/ux", "graphic design"
+  ],
+  "business_marketing": [
+    "seo", "digital marketing", "content writing", "social media marketing", "excel", "shopify", "copywriting"
+  ]
+}
