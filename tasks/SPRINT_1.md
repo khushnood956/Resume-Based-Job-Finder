@@ -29,9 +29,9 @@
 * **Difficulty**: Easy
 * **Estimated Time**: 1 hour
 * **Acceptance Criteria**:
-  - [ ] Virtual environment can be created and activated.
-  - [ ] All packages in `requirements.txt` install successfully.
-  - [ ] Boilerplate FastAPI application runs locally on port 8000.
+  - [x] Virtual environment can be created and activated.
+  - [x] All packages in `requirements.txt` install successfully.
+  - [x] Boilerplate FastAPI application runs locally on port 8000.
 * **Deliverables**: `services/resume-parser/requirements.txt`, `services/resume-parser/main.py`.
 
 ### TS-1.3: PDF Text Extraction

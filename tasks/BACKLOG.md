@@ -6,7 +6,7 @@ A comprehensive breakdown of all granular development tasks required to build th
 
 ## 1. Project Initialization & Setup (INFRA)
 * [x] **TS-1.1**: Initialize Next.js app in the `frontend` folder using `npx -y create-next-app@latest` (with TypeScript, App Router, ESLint, and Vanilla CSS).
-* [ ] **TS-1.2**: Initialize Python virtual environment inside `services/resume-parser`.
+* [x] **TS-1.2**: Initialize Python virtual environment inside `services/resume-parser`.
 * [ ] **TS-1.3**: Initialize Node project inside `services/job-search`.
 * [ ] **TS-1.4**: Configure `.env.example` file templates in the root directory.
 * [ ] **TS-1.5**: Set up local Supabase container or link to a free cloud Supabase instance.
