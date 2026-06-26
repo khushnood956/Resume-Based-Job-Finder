@@ -68,9 +68,9 @@
 * **Difficulty**: Easy
 * **Estimated Time**: 3 hours
 * **Acceptance Criteria**:
-  - [ ] Tables are created with appropriate data types.
-  - [ ] Indexes are verified as active.
-  - [ ] Auth trigger is tested (adding user to Auth automatically creates a profile record).
+  - [x] Tables are created with appropriate data types.
+  - [x] Indexes are verified as active.
+  - [x] Auth trigger is tested (adding user to Auth automatically creates a profile record).
 * **Deliverables**: Active database schemas on Supabase.
 
 ### TS-1.6: Parser Endpoint Proxy in Next.js
