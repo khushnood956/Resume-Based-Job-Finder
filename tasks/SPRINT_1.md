@@ -42,9 +42,9 @@
 * **Difficulty**: Medium
 * **Estimated Time**: 4 hours
 * **Acceptance Criteria**:
-  - [ ] Can process multi-page resumes.
-  - [ ] Correctly reads multi-column templates.
-  - [ ] Cleans weird unicode control characters and handles image-only files gracefully (returns informative error).
+  - [x] Can process multi-page resumes.
+  - [x] Correctly reads multi-column templates.
+  - [x] Cleans weird unicode control characters and handles image-only files gracefully (returns informative error).
 * **Deliverables**: `services/resume-parser/extractor.py`, parser unit tests.
 
 ### TS-1.4: Skill Dictionary & Matching Logic
