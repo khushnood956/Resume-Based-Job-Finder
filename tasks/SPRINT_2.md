@@ -16,8 +16,8 @@
 * **Difficulty**: Easy
 * **Estimated Time**: 2 hours
 * **Acceptance Criteria**:
-  - [ ] Running compiler produces javascript in `dist/`.
-  - [ ] Node packages resolve correctly.
+  - [x] Running compiler produces javascript in `dist/`.
+  - [x] Node packages resolve correctly.
 * **Deliverables**: `services/job-search/package.json`, `services/job-search/tsconfig.json`.
 
 ### TS-2.2: Adzuna PK Integration
@@ -28,9 +28,9 @@
 * **Difficulty**: Medium
 * **Estimated Time**: 5 hours
 * **Acceptance Criteria**:
-  - [ ] Correctly fetches paginated results.
-  - [ ] Formats response data.
-  - [ ] Handles rate limit status codes (retry-after or logging/skipping).
+  - [x] Correctly fetches paginated results.
+  - [x] Formats response data.
+  - [x] Handles rate limit status codes (retry-after or logging/skipping).
 * **Deliverables**: `services/job-search/clients/adzuna.ts`.
 
 ### TS-2.3: Static Local Scrapers
@@ -41,8 +41,8 @@
 * **Difficulty**: Medium
 * **Estimated Time**: 8 hours
 * **Acceptance Criteria**:
-  - [ ] Parses HTML elements to extract title, company, location, salary, description, and source URL.
-  - [ ] Gracefully logs errors if structure changes without crashing the scraper script.
+  - [x] Parses HTML elements to extract title, company, location, salary, description, and source URL.
+  - [x] Gracefully logs errors if structure changes without crashing the scraper script.
 * **Deliverables**: `services/job-search/scrapers/local-scraper.ts`.
 
 ### TS-2.4: Skill Tagging Engine
@@ -53,8 +53,8 @@
 * **Difficulty**: Medium
 * **Estimated Time**: 6 hours
 * **Acceptance Criteria**:
-  - [ ] Successfully matches text keywords against skills in the database `skills` table.
-  - [ ] Creates relational links in `job_skills`.
+  - [x] Successfully matches text keywords against skills in the database `skills` table.
+  - [x] Creates relational links in `job_skills`.
 * **Deliverables**: `services/job-search/utils/skill-tagger.ts`.
 
 ### TS-2.5: Deduplication & Database Sync
@@ -65,8 +65,8 @@
 * **Difficulty**: Medium
 * **Estimated Time**: 5 hours
 * **Acceptance Criteria**:
-  - [ ] Prevents duplicate job insert operations.
-  - [ ] Correctly links jobs and skills inside PostgreSQL transaction blocks.
+  - [x] Prevents duplicate job insert operations.
+  - [x] Correctly links jobs and skills inside PostgreSQL transaction blocks.
 * **Deliverables**: `services/job-search/sync.ts`.
 
 ### TS-2.6: Job Archive Cron
@@ -77,6 +77,6 @@
 * **Difficulty**: Easy
 * **Estimated Time**: 2 hours
 * **Acceptance Criteria**:
-  - [ ] Running query removes records where `posted_at < NOW() - INTERVAL '30 days'`.
-  - [ ] Cascades delete rows without foreign key blockages.
+  - [x] Running query removes records where `posted_at < NOW() - INTERVAL '30 days'`.
+  - [x] Cascades delete rows without foreign key blockages.
 * **Deliverables**: Database clean-up query function.

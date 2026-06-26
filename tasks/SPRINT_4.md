@@ -16,8 +16,8 @@
 * **Difficulty**: Easy
 * **Estimated Time**: 3 hours
 * **Acceptance Criteria**:
-  - [ ] Styles are loaded globally.
-  - [ ] Themes (light/dark parameters) are defined via CSS variables.
+  - [x] Styles are loaded globally.
+  - [x] Themes (light/dark parameters) are defined via CSS variables.
 * **Deliverables**: `frontend/src/app/globals.css`.
 
 ### TS-4.2: Auth Layouts & Forms
@@ -28,8 +28,8 @@
 * **Difficulty**: Easy
 * **Estimated Time**: 5 hours
 * **Acceptance Criteria**:
-  - [ ] Account creation, login, and recovery forms work correctly.
-  - [ ] Visual styling matches premium standards (rounded input grids, smooth hover transitions, glassmorphic card layouts).
+  - [x] Account creation, login, and recovery forms work correctly.
+  - [x] Visual styling matches premium standards (rounded input grids, smooth hover transitions, glassmorphic card layouts).
 * **Deliverables**: Authentication screen components.
 
 ### TS-4.3: Onboarding & Resume Upload Wizard
@@ -40,9 +40,9 @@
 * **Difficulty**: Hard
 * **Estimated Time**: 12 hours
 * **Acceptance Criteria**:
-  - [ ] File drag-and-drop handles drops/clicks.
-  - [ ] Loading skeleton runs during active API parsing.
-  - [ ] User can manually add or delete skills as tags.
+  - [x] File drag-and-drop handles drops/clicks.
+  - [x] Loading skeleton runs during active API parsing.
+  - [x] User can manually add or delete skills as tags.
 * **Deliverables**: Upload wizard UI components.
 
 ### TS-4.4: Recommended Jobs Dashboard
@@ -53,8 +53,8 @@
 * **Difficulty**: Medium
 * **Estimated Time**: 8 hours
 * **Acceptance Criteria**:
-  - [ ] Cards display title, company, location, match score, and relative post dates.
-  - [ ] Filters for location, remote-only, and minimum match score work responsively.
+  - [x] Cards display title, company, location, match score, and relative post dates.
+  - [x] Filters for location, remote-only, and minimum match score work responsively.
 * **Deliverables**: Recommended jobs dashboard components.
 
 ### TS-4.5: Job Detail Modal & Learning Resource Links
@@ -65,8 +65,8 @@
 * **Difficulty**: Medium
 * **Estimated Time**: 6 hours
 * **Acceptance Criteria**:
-  - [ ] Modal displays full description.
-  - [ ] Compiles missing skills and provides links to learning materials.
+  - [x] Modal displays full description.
+  - [x] Compiles missing skills and provides links to learning materials.
 * **Deliverables**: Job details modal component.
 
 ### TS-4.6: Saved Bookmarks Page
@@ -77,8 +77,8 @@
 * **Difficulty**: Easy
 * **Estimated Time**: 4 hours
 * **Acceptance Criteria**:
-  - [ ] User can bookmark/unbookmark from job cards/modals.
-  - [ ] Status updates write to the database and reflect in UI lists.
+  - [x] User can bookmark/unbookmark from job cards/modals.
+  - [x] Status updates write to the database and reflect in UI lists.
 * **Deliverables**: Bookmarked jobs page component.
 
 ### TS-4.7: User Settings & Alerts Panel
@@ -89,8 +89,8 @@
 * **Difficulty**: Medium
 * **Estimated Time**: 6 hours
 * **Acceptance Criteria**:
-  - [ ] Updates to preferences save to Supabase profiles.
-  - [ ] Displays unique Telegram verification tokens for users linking chats.
+  - [x] Updates to preferences save to Supabase profiles.
+  - [x] Displays unique Telegram verification tokens for users linking chats.
 * **Deliverables**: Settings page component.
 
 ### TS-4.8: Live Production Launch
@@ -101,6 +101,6 @@
 * **Difficulty**: Medium
 * **Estimated Time**: 8 hours
 * **Acceptance Criteria**:
-  - [ ] Web platform runs in cloud production environments.
-  - [ ] Operational cost remains at $0/month.
+  - [x] Web platform runs in cloud production environments.
+  - [x] Operational cost remains at $0/month.
 * **Deliverables**: Live production website links.

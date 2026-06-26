@@ -1,0 +1,48 @@
+name: Daily Job Aggregator & Matching Alerts
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 5:00 AM PKT Daily
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  run-scraper-and-dispatcher:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Scraper Dependencies
+        run: |
+          cd services/job-search
+          npm install
+
+      - name: Run Job Sync Scraper
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+        run: |
+          cd services/job-search
+          npm run start
+
+      - name: Install Notifier Dependencies
+        run: |
+          cd services/notifications
+          npm install
+
+      - name: Run Alert Dispatcher
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: |
+          cd services/notifications
+          npm run start

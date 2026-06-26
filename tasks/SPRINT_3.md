@@ -16,9 +16,9 @@
 * **Difficulty**: Medium
 * **Estimated Time**: 6 hours
 * **Acceptance Criteria**:
-  - [ ] Running RPC function with user UUID returns correctly formatted columns.
-  - [ ] Matching calculation is checked and outputs exact scores based on weights.
-  - [ ] Compiles missing skills list.
+  - [x] Running RPC function with user UUID returns correctly formatted columns.
+  - [x] Matching calculation is checked and outputs exact scores based on weights.
+  - [x] Compiles missing skills list.
 * **Deliverables**: Database RPC script.
 
 ### TS-3.2: Recommendations API Route
@@ -29,8 +29,8 @@
 * **Difficulty**: Easy
 * **Estimated Time**: 3 hours
 * **Acceptance Criteria**:
-  - [ ] Access is blocked if not authenticated.
-  - [ ] Returns paginated recommendation objects.
+  - [x] Access is blocked if not authenticated.
+  - [x] Returns paginated recommendation objects.
 * **Deliverables**: `frontend/src/app/api/jobs/recommendations/route.ts`.
 
 ### TS-3.3: Resend Email Client
@@ -41,8 +41,8 @@
 * **Difficulty**: Easy
 * **Estimated Time**: 4 hours
 * **Acceptance Criteria**:
-  - [ ] Emails compile HTML format successfully.
-  - [ ] Dispatching emails works and respects daily free-tier limits.
+  - [x] Emails compile HTML format successfully.
+  - [x] Dispatching emails works and respects daily free-tier limits.
 * **Deliverables**: `services/notifications/resend.ts`.
 
 ### TS-3.4: Telegram Bot Integration
@@ -53,8 +53,8 @@
 * **Difficulty**: Hard
 * **Estimated Time**: 10 hours
 * **Acceptance Criteria**:
-  - [ ] Correctly links user IDs upon receipt of valid verify tokens.
-  - [ ] Rejects invalid tokens and replies with error prompt.
+  - [x] Correctly links user IDs upon receipt of valid verify tokens.
+  - [x] Rejects invalid tokens and replies with error prompt.
 * **Deliverables**: `services/notifications/telegram-bot.ts`.
 
 ### TS-3.5: Daily Notification Loop
@@ -65,8 +65,8 @@
 * **Difficulty**: Medium
 * **Estimated Time**: 6 hours
 * **Acceptance Criteria**:
-  - [ ] Pulls matches daily and aggregates into a single message/email.
-  - [ ] Logs delivery results in database notifications table.
+  - [x] Pulls matches daily and aggregates into a single message/email.
+  - [x] Logs delivery results in database notifications table.
 * **Deliverables**: `services/notifications/dispatcher.ts`.
 
 ### TS-3.6: GitHub Actions Workflow Cron
@@ -77,6 +77,6 @@
 * **Difficulty**: Easy
 * **Estimated Time**: 3 hours
 * **Acceptance Criteria**:
-  - [ ] Action runs on schedule.
-  - [ ] Execution completes within GitHub time constraints.
+  - [x] Action runs on schedule.
+  - [x] Execution completes within GitHub time constraints.
 * **Deliverables**: `.github/workflows/daily-scraper.yml`.
