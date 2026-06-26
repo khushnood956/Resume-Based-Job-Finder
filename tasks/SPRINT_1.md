@@ -81,8 +81,8 @@
 * **Difficulty**: Medium
 * **Estimated Time**: 6 hours
 * **Acceptance Criteria**:
-  - [ ] Restricts uploads to PDF.
-  - [ ] Verifies file size limit (5MB).
-  - [ ] Files upload to private storage bucket named `resumes`.
-  - [ ] Returns list of parsed skills and sections.
+  - [x] Restricts uploads to PDF.
+  - [x] Verifies file size limit (5MB).
+  - [x] Files upload to private storage bucket named `resumes`.
+  - [x] Returns list of parsed skills and sections.
 * **Deliverables**: `frontend/src/app/api/resume/upload/route.ts`.

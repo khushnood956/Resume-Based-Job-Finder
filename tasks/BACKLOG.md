@@ -20,8 +20,8 @@ A comprehensive breakdown of all granular development tasks required to build th
 * [x] **TS-2.5**: Construct local dictionary structure for technical/soft skills matching Pakistani demands.
 * [x] **TS-2.6**: Write extraction regex algorithms to isolate skills without false-matching subwords.
 * [x] **TS-2.7**: Segment resume sections (Experience, Education, Skills) to optimize parsing weights.
-* [ ] **TS-2.8**: Secure parser API using headers-based static API token authentication.
-* [ ] **TS-2.9**: Create Vercel endpoint proxy `/api/resume/upload` to receive frontend uploads and forward them to the parser.
+* [x] **TS-2.8**: Secure parser API using headers-based static API token authentication.
+* [x] **TS-2.9**: Create Vercel endpoint proxy `/api/resume/upload` to receive frontend uploads and forward them to the parser.
 
 ## 3. Job Search & Scraper Engine (CRAWL)
 * [ ] **TS-3.1**: Set up basic compiler configurations for TypeScript in `services/job-search`.
